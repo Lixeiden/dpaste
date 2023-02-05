@@ -1,24 +1,43 @@
-Dpaste
----
 ![dpaste image](https://img.shields.io/pypi/v/dpaste.svg)
 [![Python CI](https://github.com/DarrenOfficial/dpaste/actions/workflows/python.yml/badge.svg)](https://github.com/DarrenOfficial/dpaste/actions/workflows/python.yml)
 [![Docker Image CI](https://github.com/DarrenOfficial/dpaste/actions/workflows/docker.yml/badge.svg)](https://hub.docker.com/r/darrenofficial/dpaste)
 ![Code Quality](https://api.codacy.com/project/badge/Grade/185cfbe9b4b447e59a40f816c4a5ebf4)
 
-----
-
 📖 Full documentation on [https://docs.dpaste.org](https://docs.dpaste.org)
 
-
-dpaste is a [pastebin](https://en.wikipedia.org/wiki/Pastebin) application written in [Python](https://www.python.org/) using the [Django](https://www.djangoproject.com/) framework. You can find a live installation on [dpaste.org.](https://dpaste.org)
-
-The project is intended to run standalone as any regular Django Project, but it's also possible to install it into an existing project as a typical Django application.
+requires at a minimum Python 3.6 and Django 3.2.
 
 
-The code is open source and available on Github: [https://github.com/darrenofficial/dpaste](https://github.com/darrenofficial/dpaste). If you found bugs, have problems or ideas with the project or the website installation, please create an *Issue* there.
+----
 
-⚠️ dpaste requires at a minimum Python 3.6 and Django 3.2.
+Checklist:
+---
+...
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .[dev]
+./manage.py migrate
+./manage.py runserver
+...
+
+...
+sudo apt install npm
+make css
+sudo apt purge npm
+./manage.py collectstatic
+...
 
 
-dpaste.org: https://dpaste.org/
-pastebin: https://en.wikipedia.org/wiki/Pastebin
+---
+
+dpaste with docker-compose for local development
+
+The project’s preferred way for local development is docker-compose:
+
+$ docker-compose up
+
+This will open the Django runserver on http://127.0.0.1:8000. Changes to the code are automatically reflected in the Docker container and the runserver will reload automatically.
+
+Upon first run you will need to migrate the database. Do that in a separate terminal window:
+
+$ docker-compose run --rm app ./manage.py migrate
