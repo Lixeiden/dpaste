@@ -1,5 +1,11 @@
 .idea/
 
+.static/
+dpaste/static/
+
+dpaste.sqlite
+
+
 ################################################################################
 
 # Byte-compiled / optimized / DLL files
