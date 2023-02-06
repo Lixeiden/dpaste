@@ -16,11 +16,6 @@
     {{ form.expires }}
   </p>
 
-  <p class="form-rtl">
-    {{ form.rtl }}
-    <label for="{{ form.rtl.auto_id }}">{% trans "Right-to-Left" %}</label>
-  </p>
-
   <p class="form-textarea superenter {% if not object %}autofocus{% endif %} {% if form.content.errors %}error{% endif %}">
       <label for="{{ form.content.auto_id }}">{% trans "Content" %}</label>
     {{ form.content }}
