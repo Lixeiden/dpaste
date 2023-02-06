@@ -8,29 +8,32 @@
 requires at a minimum Python 3.6 and Django 3.2.
 
 
-----
+-----------------
+
 
 Checklist:
----
-...
+----------
+
+```
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .[dev]
 ./manage.py migrate
 ./manage.py runserver
-...
+```
 
-...
+```
 sudo apt install npm
 make css
 sudo apt purge npm
 ./manage.py collectstatic
-...
+```
 
 
----
 
 dpaste with docker-compose for local development
+-------------
+
 
 The project’s preferred way for local development is docker-compose:
 
