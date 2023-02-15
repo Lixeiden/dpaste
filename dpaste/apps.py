@@ -33,7 +33,7 @@ class dpasteAppConfig(AppConfig):
     # HTML content injected in the About page
     EXTRA_POST_ABOUT = ""
 
-    # HTML content injeted after the "New snippet" form
+    # HTML content injected after the "New snippet" form
     EXTRA_POST_NEW = ""
 
     # HTML content injected at the end of every form
@@ -85,7 +85,7 @@ class dpasteAppConfig(AppConfig):
     )
 
     # Default value for ``EXPIRE_CHOICES``
-    EXPIRE_DEFAULT = 3600 * 24 * 7
+    EXPIRE_DEFAULT = 3600
 
     # **One-Time snippets** are supported. One-Time snippets are automatically
     # deleted once a defined view count has reached (Default: ``2``). To

@@ -28,7 +28,7 @@ def get_expire_values(expires):
 class SnippetForm(forms.ModelForm):
     content = forms.CharField(
         label=_("Content"),
-        widget=forms.Textarea(attrs={"placeholder": _("Awesome code goes here...")}),
+        widget=forms.Textarea(attrs={"placeholder": _("Paste here...")}),
         max_length=config.MAX_CONTENT_LENGTH,
         strip=False,
     )
