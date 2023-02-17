@@ -23,10 +23,8 @@ pip install -e .[dev]
 ```
 
 ```
-sudo apt install npm
-make css
-sudo apt purge npm
-./manage.py collectstatic
+client/scss/dpaste.scss --compiled--> dpaste/static/dpaste.css
+./manage.py collectstatic [dpaste/static/dpaste.css --> .static (STATIC_ROOT)]
 ```
 
 

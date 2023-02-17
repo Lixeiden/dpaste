@@ -29,18 +29,6 @@ docs: ## Compile the documentation
 docs-watch: ## Compile the documentation and watch for changes
 	docker-compose run -p 8000:8000 --rm app sphinx-autobuild --host 0 --port 8000 docs docs/_build/html
 
-.PHONY: css
-css: ## Compile SCSS files
-	npx sass --no-source-map --style=compressed client/scss/dpaste.scss:dpaste/static/dpaste.css
-
-.PHONY: css-watch
-css-watch: ## Compile JS files
-	npx sass --watch client/scss/dpaste.scss:dpaste/static/dpaste.css
-
-.PHONY: js
-js: ## Compile JS files
-	npx uglifyjs --compress="drop_console=true,ecma=6" --mangle="toplevel" --output=dpaste/static/dpaste.js client/js/dpaste.js
-
 .PHONY: release-docker
 release-docker:
 	set -ex
