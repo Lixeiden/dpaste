@@ -15,8 +15,8 @@ Checklist:
 ----------
 
 ```
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 pip install -e .[dev]
 ./manage.py migrate
 ./manage.py runserver
